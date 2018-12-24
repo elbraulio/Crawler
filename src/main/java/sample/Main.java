@@ -406,8 +406,11 @@ public class Main extends Application {
         strike.setFill(Color.RED);
         strike.setStrokeWidth(0);
 
-        FileInputStream inputstream = null;
-        inputstream = new FileInputStream("Images/dead.png");
+        InputStream inputstream = null;
+        inputstream =
+                Main.class.getClassLoader()
+                        .getResourceAsStream("Images/dead.png");
+
         died.setImage(new Image(inputstream));
         died.setFitWidth(650);
         died.setFitHeight(300);
@@ -436,7 +439,9 @@ public class Main extends Application {
 
         chest.setFitHeight(40);
         chest.setFitWidth(40);
-        FileInputStream loadimg = new FileInputStream("Images/chest.png");
+        InputStream loadimg = Main.class
+                .getClassLoader()
+                .getResourceAsStream("Images/chest.png");
         chest.setImage(new Image(loadimg));
         chest.setVisible(false);
 
@@ -445,7 +450,9 @@ public class Main extends Application {
         enbox.setFill(Color.WHITE);
 
         ImageView logo = new ImageView();
-        FileInputStream inputstream2 = new FileInputStream("Images/crawler.png");
+        InputStream inputstream2 = Main.class
+                .getClassLoader()
+                .getResourceAsStream("Images/crawler.png");
 
         logo.setImage(new Image(inputstream2));
         logo.setFitHeight(300);
@@ -494,7 +501,10 @@ public class Main extends Application {
         chest.setVisible(false);
 
         try{
-            FileInputStream inputstream = new FileInputStream("Images/floor.png");
+            InputStream inputstream =
+                    Main.class
+                    .getClassLoader()
+                    .getResourceAsStream("Images/floor.png");
             room.setImage(new Image(inputstream));
         }catch (Exception e){
 
@@ -505,7 +515,9 @@ public class Main extends Application {
         door.setFill(Color.rgb(65, 40, 20));
 
         try{
-            FileInputStream inputstream = new FileInputStream("Images/char.png");
+            InputStream inputstream = Main.class
+                    .getClassLoader()
+                    .getResourceAsStream("Images/char.png");
             mainchar.setImage(new Image(inputstream));
         }catch (Exception e){
 
@@ -617,7 +629,9 @@ public class Main extends Application {
 
     public static void enemygen(){
         try{
-            FileInputStream inputstream = new FileInputStream("Images/enemy.png");
+            InputStream inputstream = Main.class
+                    .getClassLoader()
+                    .getResourceAsStream("Images/enemy.png");
             enemy.setImage(new Image(inputstream));
         }catch (Exception e){
 
@@ -830,7 +844,7 @@ public class Main extends Application {
 
     public static void load(){
         try {
-            FileReader fileReader = new FileReader("c\\crawlersavegame.txt");
+            FileReader fileReader = new FileReader("./crawlersavegame.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
             savegame = bufferedReader.readLine();
@@ -877,7 +891,7 @@ public class Main extends Application {
     public static void save(){
         try {
             savegame = health + " " + strength + " " + bark + " " + wood + " " + carbon + " " + magma + " " + firedust + " " + lifedust + " " + soulserum + " " + mortalpowder + " " + megapowder + " " + ultrapowder + " " + infinitumpowder + " " + gold + " " + sapphire + " " + nightstone + " " + energyserum + " " + xenonpowder + " " + neonpowder + " " + concentratedoganesson + " " + energyelixir + " " + purificationstone + " " + maximuscrystals + " " + eternalpearls;
-            File file = new File ("c\\crawlersavegame.txt");
+            File file = new File ("./crawlersavegame.txt");
             BufferedWriter out = new BufferedWriter(new FileWriter(file));
             out.write(savegame);
             out.close();
@@ -1292,3 +1306,5 @@ class strikegone extends TimerTask{
         Main.strike.setStrokeWidth(0);
     }
 }
+
+class resourceLoader {}
