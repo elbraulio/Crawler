@@ -1,12 +1,10 @@
 package sample;
 
-import com.apple.eawt.AppEvent;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -14,24 +12,17 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.*;
 import javafx.scene.text.Font;
-import javafx.scene.transform.Rotate;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import javafx.scene.control.TextField;
 
-import java.io.*;
-import java.lang.ref.Reference;
-import java.lang.reflect.Array;
-import java.util.*;
-
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.beans.EventHandler;
-import java.util.List;
+import java.io.*;
+import java.util.Random;
 import java.util.Timer;
+import java.util.TimerTask;
 
 import static sample.Main.*;
 
