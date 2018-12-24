@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: /Users/Adrian/IdeaProjects/Dungeons/src/sample/Main.java
+Main-Class: sample.Main
+
